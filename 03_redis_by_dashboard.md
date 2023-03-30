@@ -5,10 +5,7 @@ Prerequisite: start `minikube` if it is not running.
 1. Start `minikube dashboard`:
 
 ```bash
-minikube dashboard --port 8000
-```
-
-```bash
+% minikube dashboard --port 8000
 🤔  Verifying dashboard health ...
 🚀  Launching proxy ...
 🤔  Verifying proxy health ...
@@ -26,10 +23,7 @@ minikube dashboard --port 8000
 4. `Redis` info:
 
 ```bash
-kubectl get pods,rs,deployments
-```
-
-```bash
+% kubectl get pods,rs,deployments
 NAME                         READY   STATUS    RESTARTS   AGE
 pod/redis-57c8d5cfdd-j7wd8   1/1     Running   0          18m
 
@@ -43,10 +37,7 @@ deployment.apps/redis   1/1     1            1           18m
 5. `Redis` logs:
 
 ```bash
-kubectl logs redis-57c8d5cfdd-j7wd8 -f
-```
-
-```bash
+% kubectl logs redis-57c8d5cfdd-j7wd8 -f
 1:C 29 Mar 2023 20:49:06.048 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
 1:C 29 Mar 2023 20:49:06.048 # Redis version=7.0.10, bits=64, commit=00000000, modified=0, pid=1, just started
 1:C 29 Mar 2023 20:49:06.048 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf

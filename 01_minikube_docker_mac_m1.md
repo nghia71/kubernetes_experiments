@@ -7,10 +7,7 @@ Visit [Docker.com](https://www.docker.com) and download `Docker Desktop for Appl
 2. Install `minikube` by `brew`:
 
 ```bash
-brew install minikube
-```
-
-```bash
+% brew install minikube
 ==> Fetching minikube
 ==> Downloading https://ghcr.io/v2/homebrew/core/minikube/manifests/1.29.0
 ######################################################################## 100.0%
@@ -31,10 +28,7 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 3. Start `minikube`, it will use the installed `Docker` instance:
 
 ```bash
-minikube start
-```
-
-```bash
+% minikube start
 😄  minikube v1.29.0 on Darwin 13.2.1 (arm64)
 ✨  Automatically selected the docker driver
 📌  Using Docker Desktop driver with root privileges
@@ -62,16 +56,13 @@ minikube start
 5. Install `kubectl`:
 
 ```bash
-brew install kubectl
+% brew install kubectl
 ```
 
 6. Verify `kubectl` installation:
 
 ```bash
-kubectl version --client --output=yaml
-```
-
-```bash
+% kubectl version --client --output=yaml
 clientVersion:
   buildDate: "2023-03-15T13:33:11Z"
   compiler: gc
@@ -88,10 +79,7 @@ kustomizeVersion: v4.5.7
 7. Check `minikube` cluster info by `kubectl`:
 
 ```bash
-kubectl cluster-info
-```
-
-```bash
+% kubectl cluster-info
 Kubernetes control plane is running at https://127.0.0.1:53514
 CoreDNS is running at https://127.0.0.1:53514/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
@@ -101,10 +89,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 8. Review `kubectl` config
 
 ```bash
-kubectl config view
-```
-
-```bash
+% kubectl config view
 apiVersion: v1
 clusters:
 - cluster:
@@ -142,20 +127,14 @@ users:
 8. Review current context
 
 ```bash
-kubectl config current-context
-```
-
-```bash
+% kubectl config current-context
 minikube
 ```
 
 9. List all pods with in `kube-system` namespace:
 
 ```bash
-kubectl get pods -n kube-system
-```
-
-```bash
+% kubectl get pods -n kube-system
 NAME                               READY   STATUS    RESTARTS      AGE
 coredns-787d4945fb-zhtxg           1/1     Running   0             90s
 etcd-minikube                      1/1     Running   0             101s
@@ -169,10 +148,7 @@ storage-provisioner                1/1     Running   1 (60s ago)   101s
 10. List all namespaces:
 
 ```bash
-kubectl get namespace
-```
-
-```bash
+% kubectl get namespace
 NAME              STATUS   AGE
 default           Active   118s
 kube-node-lease   Active   119s
@@ -183,10 +159,7 @@ kube-system       Active   119s
 11. Launch dashboard:
 
 ```bash
-minikube dashboard
-```
-
-```bash
+% minikube dashboard
 🔌  Enabling dashboard ...
     ▪ Using image docker.io/kubernetesui/metrics-scraper:v1.0.8
     ▪ Using image docker.io/kubernetesui/dashboard:v2.7.0
@@ -204,10 +177,7 @@ minikube dashboard
 12. Enable `metrics-server`:
 
 ```bash
-minikube addons enable metrics-server
-```
-
-```bash
+% minikube addons enable metrics-server
 💡  metrics-server is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
 You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
     ▪ Using image registry.k8s.io/metrics-server/metrics-server:v0.6.2
@@ -217,10 +187,7 @@ You can view the list of minikube maintainers at: https://github.com/kubernetes/
 13. Launch proxy:
 
 ```bash
-kubectl proxy
-```
-
-```bash
+% kubectl proxy
 Starting to serve on 127.0.0.1:8001
 ```
 
@@ -231,10 +198,7 @@ Starting to serve on 127.0.0.1:8001
 15. Stop `minikube`:
 
 ```bash
-minikube stop
-```
-
-```bash
+% minikube stop
 ✋  Stopping node "minikube"  ...
 🛑  Powering off "minikube" via SSH ...
 🛑  1 node stopped.
@@ -243,10 +207,7 @@ minikube stop
 16. (re)Start `minikube`:
 
 ```bash
-minikube start
-```
-
-```bash
+% minikube start
 😄  minikube v1.29.0 on Darwin 13.2.1 (arm64)
 ✨  Using the docker driver based on existing profile
 👍  Starting control plane node minikube in cluster minikube
@@ -271,10 +232,7 @@ minikube start
 17. Delete `minikube`:
 
 ```bash
-minikube stop; minikube delete
-```
-
-```bash
+% minikube stop; minikube delete
 🔥  Deleting "minikube" in docker ...
 🔥  Deleting container "minikube" ...
 🔥  Removing /Users/nghia/.minikube/machines/minikube ...
